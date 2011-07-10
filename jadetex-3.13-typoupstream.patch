@@ -1,0 +1,12 @@
+diff -urp jadetex-3.13/jadetex.dtx jadetex-3.13-fix/jadetex.dtx
+--- jadetex-3.13/jadetex.dtx	2003-05-18 13:26:44.000000000 +0200
++++ jadetex-3.13-fix/jadetex.dtx	2007-06-07 16:31:01.000000000 +0200
+@@ -557,7 +557,7 @@
+    \else
+      \ifNestedLink{#1}%
+      \else
+-      \hyper@@link[Page]{}{page.#1}{#1}%
++      \hyper@@link[page]{}{page.#1}{#1}%
+ %     \typeout{Made a Link at \the\inputlineno, to page.#1}%
+      \fi
+    \fi

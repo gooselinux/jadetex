@@ -1,0 +1,25 @@
+--- jadetex-3.12/Makefile.tetex3	2005-02-22 13:28:49.877296296 -0800
++++ jadetex-3.12/Makefile	2005-02-22 13:28:59.873776600 -0800
+@@ -4,10 +4,10 @@
+ 	tex jadetex.ins
+ 
+ jadetex.fmt: basic
+-	tex -ini -progname=jadetex "&latex" jadetex.ini
++	etex -ini -progname=jadetex "&latex" jadetex.ini
+ 
+ pdfjadetex.fmt: basic
+-	pdftex -ini -progname=pdfjadetex "&pdflatex" pdfjadetex.ini
++	pdfetex -ini -progname=pdfjadetex "&pdflatex" pdfjadetex.ini
+ 
+ install: jadetex.fmt pdfjadetex.fmt
+ 	(TT=$$DESTDIR/`kpsewhich -expand-var '$$TEXMFMAIN'`; \
+--- jadetex-3.12/jadefmtutil.cnf.tetex3	2005-02-22 13:28:05.975970312 -0800
++++ jadetex-3.12/jadefmtutil.cnf	2005-02-22 13:28:05.986968640 -0800
+@@ -5,5 +5,5 @@
+ # invoke with 'fmtutil --cnffile <file> --all'
+ #
+ # format        engine  pattern-file    arguments
+-jadetex         tex     language.dat    &latex jadetex.ini
+-pdfjadetex      pdftex  language.dat    &pdflatex pdfjadetex.ini
++jadetex         etex    language.dat    &latex jadetex.ini
++pdfjadetex      pdfetex language.dat    &pdflatex pdfjadetex.ini
